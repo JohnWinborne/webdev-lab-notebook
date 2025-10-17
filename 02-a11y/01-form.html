@@ -4,25 +4,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>01 - Form</title>
+    <style>
+      /*I did this to add enough sufficient size or spacing because lighthouse said so*/
+      input[type="radio"],
+      input[type="text"],
+      button,
+      label {
+        padding: 12px;
+        margin: 6px;
+      }
+      label {
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      button {
+        font-size: 12px;
+        padding: 12px 20px;
+        border-radius: 8px;
+      }
+    </style>
     <link rel="stylesheet" href="../_styles/styles.css" />
+    
   </head>
+  <!-- Added fieldset, divs, id, name, value, and for to fix 
+   "Form elements do not have associated labels"-->
   <body>
     <h1>01 - Form</h1>
     <form action="/submit">
-      <span>Name</span>
-      <input type="text" />
+      <div>
+        <label for="name"> Name </label>
+        <input type="text" id="name" name="name" />
+      </div>
       <br /><br />
-      <label>
-        Email
-        <input type="text" />
-      </label>
+      <div>
+        <label for="email"> Email </label>
+        <input type="text" id="email" name="email" />
+      </div>
       <br /><br />
-      <span>Favorite Character</span>
-      <div><input type="radio" id="spongebob" />Spongebob</div>
-      <div><input type="radio" id="patrick" />Patrick</div>
-      <div><input type="radio" id="sandy" />Sandy</div>
+      <fieldset>
+        <legend>Favorite Character</legend>
+        <div>
+          <input
+            type="radio"
+            id="spongebob"
+            name="favorite_character"
+            value="spongebob"
+          />
+          <label for="spongebob">Spongebob</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="patrick"
+            name="favorite_character"
+            value="patrick"
+          />
+          <label for="patrick">Patrick </label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="sandy"
+            name="favorite_character"
+            value="sandy"
+          />
+          <label for="sandy">Sandy</label>
+        </div>
+      </fieldset>
       <br />
-      <button>Submit</button>
+      <button type="submit">Submit</button>
     </form>
   </body>
 </html>
+<!--doing these changing made the accessibility 100-->
