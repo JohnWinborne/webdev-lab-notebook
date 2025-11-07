@@ -3,8 +3,25 @@ const formatItems = (input) => {
 
   // for reference, see the MDN Number page:
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+  Number;
 
-  return input;
+  // for (let i=0; i < input.length; i++){
+  //   console.log(input[i])
+  // }
+  //empty array
+  let results = [];
+
+  //loop that goes through each element  item inside the input array
+  for (let item of input) {
+    // console.log(item.toFixed(3));
+    //formats it to 3 decimal places. and
+    // puts them into results
+    results.push(item.toFixed(3));
+  }
+  //takes all the elements in the array and combines them into
+  //one string with ', ' between them
+  return results.join(", ");
+  // return input;
 };
 
 console.log(formatItems([1, 4, 17, 26, 41]));
